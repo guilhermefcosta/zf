@@ -1,0 +1,1 @@
+1) zf2 tem diferencas no autoload e em alguns modules

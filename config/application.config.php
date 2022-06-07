@@ -8,6 +8,9 @@
  * @see https://docs.laminas.dev/tutorials/advanced-config/#environment-specific-application-configuration
  */
 
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\AdapterServiceFactory;
+
 return [
     // Retrieve list of modules used in this application.
     'modules' => require __DIR__ . '/modules.config.php',
@@ -61,5 +64,7 @@ return [
 
     // Initial configuration with which to seed the ServiceManager.
     // Should be compatible with Laminas\ServiceManager\Config.
-    // 'service_manager' => [],
+    'service_manager' => [
+        Adapter::class => AdapterServiceFactory::class
+    ],
 ];
